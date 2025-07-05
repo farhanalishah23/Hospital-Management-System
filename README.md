@@ -58,8 +58,8 @@ A role-based **Hospital Management System** built using **Laravel 7**, supportin
 ### 1️⃣ Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/laravel-hospital-system.git
-cd laravel-hospital-system
+git clone https://github.com/farhanalishah23/Hospital-Management-System.git
+cd Hospital-Management-System
 ```
 
 ### 2️⃣ Install Dependencies
@@ -127,11 +127,11 @@ Visit `http://localhost:8000`
 
 ```text
 Admin:
-  Email: admin@example.com
+  Email: admin@yopmail.com
   Password: 12345678
 
 Doctor:
-  Email: doctor@example.com
+  Email: doctor@yopmail.com
   Password: 12345678
 
 Patient:
