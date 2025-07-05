@@ -1,78 +1,146 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# 🏥 Hospital Management System – Laravel 7
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+A role-based **Hospital Management System** built using **Laravel 7**, supporting three user roles: **Admin, Doctor, and Patient**. The system allows real-time appointment booking, doctor category management, and secure payments via **PayPal** before appointment confirmation.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## 🚀 Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 👨‍⚕️ Admin Panel
+- Manage Doctors (Create, Edit, Delete)
+- Manage Doctor Categories (e.g. Cardiologist, Dentist, etc.)
+- View Appointments
+- Manage Patients
+- Dashboard stats
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 🩺 Doctor Panel
+- View their appointments
+- Patient details
+- Status updates
 
-## Learning Laravel
+### 👤 Patient Panel
+- Register/Login
+- Book Appointment with selected Doctor
+- View Appointment History
+- **PayPal payment integration** before booking confirmation
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🛠️ Tech Stack
 
-## Laravel Sponsors
+| Feature        | Technology         |
+|----------------|--------------------|
+| Framework      | Laravel 7          |
+| Template Engine| Blade              |
+| Authentication| Laravel Auth (with roles) |
+| Payment Gateway| PayPal             |
+| Database       | MySQL              |
+| Styling        | Bootstrap 4        |
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
+## 📂 Folder Structure
 
-## Contributing
+```
+/app
+/routes
+/resources/views
+  └── /admin
+  └── /doctor
+  └── /patient
+/public
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 📦 Installation & Setup
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 1️⃣ Clone the Repo
 
-## Security Vulnerabilities
+```bash
+git clone https://github.com/your-username/laravel-hospital-system.git
+cd laravel-hospital-system
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 2️⃣ Install Dependencies
 
-## License
+```bash
+composer install
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 3️⃣ Create `.env` File
+
+```bash
+cp .env.example .env
+```
+
+Update these variables:
+
+```env
+DB_DATABASE=hospital_db
+DB_USERNAME=root
+DB_PASSWORD=
+
+PAYPAL_CLIENT_ID=your-paypal-client-id
+PAYPAL_SECRET=your-paypal-secret
+```
+
+### 4️⃣ Generate App Key & Run Migrations
+
+```bash
+php artisan key:generate
+php artisan migrate
+php artisan db:seed   # (If you added default roles & admin)
+```
+
+### 5️⃣ Serve the App
+
+```bash
+php artisan serve
+```
+
+Visit `http://localhost:8000`
+
+---
+
+## 🔐 Roles & Access
+
+| Role   | Access                                   |
+|--------|------------------------------------------|
+| Admin  | Manage doctors, categories, view all     |
+| Doctor | View own appointments, patient details   |
+| Patient| Book appointments, pay via PayPal        |
+
+---
+
+## 💳 PayPal Integration
+
+- PayPal payment is required before booking appointment
+- Once payment is completed, the appointment is marked as **confirmed**
+- Integration used PayPal REST API (sandbox ready)
+
+---
+
+## 🔐 Dummy Login Details (Optional)
+
+> You can seed your database or manually register users.
+
+```text
+Admin:
+  Email: admin@example.com
+  Password: 12345678
+
+Doctor:
+  Email: doctor@example.com
+  Password: 12345678
+
+Patient:
+  Register manually via /register
+```
+
+
+## 📄 License
+
+This project is open-source and free to use.
+
+
